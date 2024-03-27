@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <div class="text-green-700 text-xl">Hello, from TailwindCSS!</div>
   </div>
 </template>
 
