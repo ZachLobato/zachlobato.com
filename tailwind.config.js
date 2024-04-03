@@ -6,6 +6,8 @@ export default {
   ],
   theme: {
     colors: {
+      'white': '#ffffff',
+      'black': '#000000',
       'prussian-blue': {
         50:  'hsl(210, 65%, 95%)',
         100: 'hsl(210, 65%, 90%)',
