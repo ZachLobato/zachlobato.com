@@ -1,6 +1,6 @@
-# zach-lobato
+# ZachLobato.com (Website)
 
-This template should help get you started developing with Vue 3 in Vite.
+My personal website and something with which I can continuously improve.
 
 ## Recommended IDE Setup
 
