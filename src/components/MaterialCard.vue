@@ -40,7 +40,7 @@
           <p class="card-subtitle text-xs text-cadet-gray-500"> {{ subTitle }}</p>
         </div>
         <footer class="link-container">
-          <ConstructionWorker v-if="underConstruction" class="launch select-none" @focus="isHovered = true" @blur="isHovered = false" :aria-label="`${title} is still under construction`"></ConstructionWorker>
+          <ConstructionWorker v-if="underConstruction" class="construction select-none" @focus="isHovered = true" @blur="isHovered = false" :aria-label="`${title} is still under construction`"></ConstructionWorker>
           <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="launchUrl" :href="launchUrl" target="_blank" rel="noopener noreferrer" :aria-label="`Launch link to ${title} project`">
             <MaterialRocketLaunchOutline class="launch" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></MaterialRocketLaunchOutline>
           </a>

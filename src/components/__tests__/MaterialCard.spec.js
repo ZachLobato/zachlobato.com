@@ -47,11 +47,12 @@ describe('MaterialCard', () => {
   it('hover state changes on focus and blur', async () => {
     const wrapper = mount(MaterialCard, { props: { 
       title: 'Test Title',
+      underConstruction: true,
       githubUrl: 'https://github.com',
       notionUrl: 'https://notion.com',
       launchUrl: 'https://launch.com',
     } });
-    const classNames = ['.github', '.notion', '.launch'];
+    const classNames = ['.construction', '.github', '.notion', '.launch'];
 
     for (const className of classNames) {
       const iconComponent = wrapper.find(className);
