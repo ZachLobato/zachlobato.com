@@ -40,14 +40,14 @@
           <p class="card-subtitle text-xs text-cadet-gray-500"> {{ subTitle }}</p>
         </div>
         <footer class="link-container">
-          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="launchUrl" :href="launchUrl" target="_blank" rel="noopener noreferrer" :aria-label="`GitHub link to ${title} project`">
-            <IconMaterialRocketLaunchOutline tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></IconMaterialRocketLaunchOutline>
+          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="launchUrl" :href="launchUrl" target="_blank" rel="noopener noreferrer" :aria-label="`Launch link to ${title} project`">
+            <MaterialRocketLaunchOutline class="launch" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></MaterialRocketLaunchOutline>
           </a>
           <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="githubUrl" :href="githubUrl" target="_blank" rel="noopener noreferrer" :aria-label="`GitHub link to ${title} project`">
-            <BiGithub tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></BiGithub>
+            <BiGithub class="github" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></BiGithub>
           </a>
           <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="notionUrl" :href="notionUrl" target="_blank" rel="noopener noreferrer" :aria-label="`Notion link to ${title} project`">
-            <CibNotion tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></CibNotion>
+            <CibNotion class="notion" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></CibNotion>
           </a>
         </footer>
       </div>
@@ -58,7 +58,7 @@
 <script setup>
 import CibNotion from './icons/IconCibNotion.vue'
 import BiGithub from './icons/IconBiGithub.vue'
-import IconMaterialRocketLaunchOutline from './icons/IconMaterialRocketLaunchOutline.vue'
+import MaterialRocketLaunchOutline from './icons/IconMaterialRocketLaunchOutline.vue'
 import { ref, watchEffect, onUnmounted } from 'vue';
 
 const isHovered = ref(false);
@@ -66,14 +66,18 @@ const prefersDark = ref(window.matchMedia('(prefers-color-scheme: dark)').matche
 
 watchEffect(() => {
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  /* v8 ignore next */
   const handler = (e) => {
+    /* v8 ignore next */
     prefersDark.value = e.matches;
   };
   // Listen for changes
   mediaQuery.addEventListener('change', handler);
 
   // Cleanup on component unmount
+  /* v8 ignore next */
   onUnmounted(() => {
+    /* v8 ignore next */
     mediaQuery.removeEventListener('change', handler);
   });
 });
@@ -124,6 +128,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style>
-</style>
