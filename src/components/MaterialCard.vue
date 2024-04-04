@@ -1,5 +1,5 @@
 <template>
-  <article role="article" @mouseenter="isHovered = true" @mouseleave="isHovered = false" @click="isHovered = !isHovered" class="card rounded-lg bg-cadet-gray-100 dark:bg-cadet-gray-900 w-80 h-64 drop-shadow-[0_0_4px_rgba(0,0,0,0.75)] dark:drop-shadow-[0_0_4px_rgba(255,255,255,0.25)]">
+  <article role="article" @mouseenter="isHovered = true" @mouseleave="isHovered = false" @touchend="isHovered = !isHovered" class="card rounded-lg bg-cadet-gray-100 dark:bg-cadet-gray-900 w-80 h-64 drop-shadow-[0_0_4px_rgba(0,0,0,0.75)] dark:drop-shadow-[0_0_4px_rgba(255,255,255,0.25)]">
     <section class="w-80 h-64 overflow-hidden">
       <header class="drop-shadow-[0_4px_2px_rgba(255,255,255,0.25)] dark:drop-shadow-[0_4px_2px_rgba(0,0,0,0.75)]">
         <img
@@ -65,6 +65,15 @@ import { watchEffect, onUnmounted } from 'vue';
 
 const isHovered = ref(false);
 const prefersDark = ref(window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+const toggleHover = () => {
+  console.log('hovering');
+  isHovered.value = !isHovered.value;
+}
+
+defineExpose({
+  toggleHover
+})
 
 watchEffect(() => {
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
