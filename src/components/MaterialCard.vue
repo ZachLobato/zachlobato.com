@@ -39,11 +39,14 @@
           <h3 class="card-title text-2xl font-semibold dark:text-prussian-blue-200 text-prussian-blue-800">{{ title }}</h3>
           <p class="card-subtitle text-xs text-cadet-gray-500"> {{ subTitle }}</p>
         </div>
-        <footer>
-          <a class="inline-block mr-2 dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="githubUrl" :href="githubUrl" target="_blank" rel="noopener noreferrer" :aria-label="`GitHub link to ${title} project`">
+        <footer class="link-container">
+          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="launchUrl" :href="launchUrl" target="_blank" rel="noopener noreferrer" :aria-label="`GitHub link to ${title} project`">
+            <IconMaterialRocketLaunchOutline tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></IconMaterialRocketLaunchOutline>
+          </a>
+          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="githubUrl" :href="githubUrl" target="_blank" rel="noopener noreferrer" :aria-label="`GitHub link to ${title} project`">
             <BiGithub tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></BiGithub>
           </a>
-          <a class="inline-block mx-2 dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="notionUrl" :href="notionUrl" target="_blank" rel="noopener noreferrer" :aria-label="`Notion link to ${title} project`">
+          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="notionUrl" :href="notionUrl" target="_blank" rel="noopener noreferrer" :aria-label="`Notion link to ${title} project`">
             <CibNotion tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></CibNotion>
           </a>
         </footer>
@@ -55,6 +58,7 @@
 <script setup>
 import CibNotion from './icons/IconCibNotion.vue'
 import BiGithub from './icons/IconBiGithub.vue'
+import IconMaterialRocketLaunchOutline from './icons/IconMaterialRocketLaunchOutline.vue'
 import { ref, watchEffect, onUnmounted } from 'vue';
 
 const isHovered = ref(false);
@@ -102,6 +106,10 @@ export default defineComponent({
       required: false,
     },
     bannerDarkVideoUrl: {
+      type: String,
+      required: false,
+    },
+    launchUrl: {
       type: String,
       required: false,
     },

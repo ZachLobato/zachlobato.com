@@ -7,6 +7,7 @@
           <MaterialCard
             banner-video-url="https://i.imgur.com/BB7MgdJ.mp4"
             banner-dark-video-url="https://i.imgur.com/rlIj59R.mp4"
+            launch-url="https://www.zachlobato.com"
             github-url="https://www.github.com"
             notion-url="https://riticulous.notion.site/Zach-Lobato-Website-a1e47722d50a44688f6ff9211d7d25cb"
             title="Personal Website"

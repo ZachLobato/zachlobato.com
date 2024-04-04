@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom class for the parent container */
+.link-container > a {
+    @apply mx-2; /* Apply margin on both sides for all */
+}
+.link-container > a:first-child {
+    @apply mr-2; /* Apply right margin for the first child */
+    @apply ml-0; /* Optional: Remove left margin if you strictly want only right margin for the first element */
+}
