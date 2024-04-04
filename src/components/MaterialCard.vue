@@ -12,7 +12,7 @@
           'h-32': isHovered,
           'h-48': !isHovered,
           'transition-all': true,
-        }" :src="prefersDark ? bannerDarkImageUrl : bannerImageUrl"></img>
+        }" :src="prefersDark ? bannerDarkImageUrl : bannerImageUrl" />
         <video
           tabindex="-1"
           v-if="bannerVideoUrl"
@@ -59,7 +59,7 @@
 import CibNotion from './icons/IconCibNotion.vue'
 import BiGithub from './icons/IconBiGithub.vue'
 import MaterialRocketLaunchOutline from './icons/IconMaterialRocketLaunchOutline.vue'
-import { ref, watchEffect, onUnmounted } from 'vue';
+import { watchEffect, onUnmounted } from 'vue';
 
 const isHovered = ref(false);
 const prefersDark = ref(window.matchMedia('(prefers-color-scheme: dark)').matches);
