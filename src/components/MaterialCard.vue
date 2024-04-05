@@ -40,14 +40,40 @@
           <p class="card-subtitle text-xs text-cadet-gray-500"> {{ subTitle }}</p>
         </div>
         <footer class="link-container">
-          <ConstructionWorker v-if="underConstruction" class="construction select-none" @focus="isHovered = true" @blur="isHovered = false" :aria-label="`${title} is still under construction`"></ConstructionWorker>
-          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="launchUrl" :href="launchUrl" target="_blank" rel="noopener noreferrer" :aria-label="`Launch link to ${title} project`">
+          <span :title="`Under Construction (${title})`">
+            <ConstructionWorker
+              v-if="underConstruction"
+              class="construction"
+              tabindex="-1"
+              @focus="isHovered = true"
+              @blur="isHovered = false"
+              :aria-label="`${title} is still under construction`"></ConstructionWorker>
+          </span>
+          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
+            v-if="launchUrl"
+            :href="launchUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="`Launch link to ${title} project`"
+            :title="`Launch (${title})`">
             <MaterialRocketLaunchOutline class="launch" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></MaterialRocketLaunchOutline>
           </a>
-          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="githubUrl" :href="githubUrl" target="_blank" rel="noopener noreferrer" :aria-label="`GitHub link to ${title} project`">
+          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
+            v-if="githubUrl"
+            :href="githubUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="`GitHub link to ${title} project`"
+            :title="`GitHub (${title})`">
             <BiGithub class="github" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></BiGithub>
           </a>
-          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" v-if="notionUrl" :href="notionUrl" target="_blank" rel="noopener noreferrer" :aria-label="`Notion link to ${title} project`">
+          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
+            v-if="notionUrl"
+            :href="notionUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="`Notion link to ${title} project`"
+            :title="`Notion (${title})`">
             <CibNotion class="notion" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></CibNotion>
           </a>
         </footer>
