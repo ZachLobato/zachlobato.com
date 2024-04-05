@@ -41,7 +41,7 @@ const fetchData = async () => {
       {
         banner_video_url: 'https://i.imgur.com/BB7MgdJ.mp4',
         banner_dark_video_url: "https://i.imgur.com/rlIj59R.mp4",
-        launch_url: "https://www.zachlobato.com",
+        launch_url: "https://zachlobato.com",
         github_url: "https://github.com/ZachLobato/zachlobato.com-website",
         notion_url: "https://riticulous.notion.site/Zach_Lobato_Website_a1e47722d50a44688f6ff9211d7d25cb",
         title: "Personal Website",
