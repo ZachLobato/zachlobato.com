@@ -22,17 +22,17 @@ describe('MaterialCard', () => {
     expect(wrapper.text()).toContain('A Title');
   });
 
-  it('hover state changes on mouse click and click again', async () => {
+  it('hover state changes on finger touchend and touchend again', async () => {
     const wrapper = mount(MaterialCard, { props: { title: 'Test Title' } });
     
     const iconComponent = wrapper.find('article');
 
     // Trigger the focus event
-    await iconComponent.trigger('click');
+    await iconComponent.trigger('touchend');
     expect(wrapper.vm.isHovered).toBe(true);
 
     // Trigger the blur event
-    await iconComponent.trigger('click');
+    await iconComponent.trigger('touchend');
     expect(wrapper.vm.isHovered).toBe(false);
   });
 

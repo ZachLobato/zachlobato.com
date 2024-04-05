@@ -13,6 +13,7 @@
             :notion-url="card.notion_url"
             :under-construction="card.under_construction"
             :title="card.title"
+            :updated-at="card.updated_at"
             :sub-title="card.sub_title"></MaterialCard>
         </div>
       </div>
@@ -46,6 +47,7 @@ const fetchData = async () => {
         notion_url: "https://riticulous.notion.site/Zach_Lobato_Website_a1e47722d50a44688f6ff9211d7d25cb",
         title: "Personal Website",
         sub_title: "For the latest on me",
+        updated_at: "2024-04-05",
       },
       {
         banner_video_url: 'https://i.imgur.com/N1tahcD.mp4',
@@ -53,6 +55,7 @@ const fetchData = async () => {
         under_construction: true,
         title: 'Oracle: A Lab Time Ago',
         sub_title: 'A time and space adventure',
+        updated_at: "2024-02-18",
       }
     ]
   } catch (error) {

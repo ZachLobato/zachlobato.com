@@ -39,43 +39,45 @@
           <h3 class="card-title text-2xl font-semibold dark:text-prussian-blue-200 text-prussian-blue-800">{{ title }}</h3>
           <p class="card-subtitle text-xs text-cadet-gray-500"> {{ subTitle }}</p>
         </div>
-        <footer class="link-container">
-          <span :title="`Under Construction (${title})`">
-            <ConstructionWorker
-              v-if="underConstruction"
-              class="construction"
-              tabindex="-1"
-              @focus="isHovered = true"
-              @blur="isHovered = false"
-              :aria-label="`${title} is still under construction`"></ConstructionWorker>
-          </span>
-          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
-            v-if="launchUrl"
-            :href="launchUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            :aria-label="`Launch link to ${title} project`"
-            :title="`Launch (${title})`">
-            <MaterialRocketLaunchOutline class="launch" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></MaterialRocketLaunchOutline>
-          </a>
-          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
-            v-if="githubUrl"
-            :href="githubUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            :aria-label="`GitHub link to ${title} project`"
-            :title="`GitHub (${title})`">
-            <BiGithub class="github" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></BiGithub>
-          </a>
-          <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
-            v-if="notionUrl"
-            :href="notionUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            :aria-label="`Notion link to ${title} project`"
-            :title="`Notion (${title})`">
-            <CibNotion class="notion" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></CibNotion>
-          </a>
+        <footer class="grid grid-cols-2 content-around">
+          <section class="icons grid grid-cols-3 gap-2 content-around">
+            <span v-if="underConstruction" :title="`Under Construction (${title})`">
+              <ConstructionWorker
+                class="construction"
+                tabindex="-1"
+                @focus="isHovered = true"
+                @blur="isHovered = false"
+                :aria-label="`${title} is still under construction`"></ConstructionWorker>
+            </span>
+            <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
+              v-if="launchUrl"
+              :href="launchUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="`Launch link to ${title} project`"
+              :title="`Launch (${title})`">
+              <MaterialRocketLaunchOutline class="launch" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></MaterialRocketLaunchOutline>
+            </a>
+            <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
+              v-if="githubUrl"
+              :href="githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="`GitHub link to ${title} project`"
+              :title="`GitHub (${title})`">
+              <BiGithub class="github" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></BiGithub>
+            </a>
+            <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
+              v-if="notionUrl"
+              :href="notionUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="`Notion link to ${title} project`"
+              :title="`Notion (${title})`">
+              <CibNotion class="notion" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></CibNotion>
+            </a>
+          </section>
+          <div class="text-xs dark:text-prussian-blue-200 text-prussian-blue-800 place-self-end">{{updatedAt}}</div>
         </footer>
       </div>
     </section>
@@ -91,15 +93,6 @@ import { watchEffect, onUnmounted } from 'vue';
 
 const isHovered = ref(false);
 const prefersDark = ref(window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-const toggleHover = () => {
-  console.log('hovering');
-  isHovered.value = !isHovered.value;
-}
-
-defineExpose({
-  toggleHover
-})
 
 watchEffect(() => {
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -127,6 +120,10 @@ import { defineComponent, ref } from 'vue';
 export default defineComponent({
   props: {
     title: {
+      type: String,
+      required: true,
+    },
+    updatedAt: {
       type: String,
       required: true,
     },
@@ -165,7 +162,7 @@ export default defineComponent({
     underConstruction: {
       type: Boolean,
       required: false,
-    }
+    },
   },
 });
 </script>
