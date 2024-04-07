@@ -3,7 +3,9 @@
     <section class="w-80 h-64 overflow-hidden">
       <header class="drop-shadow-[0_4px_2px_rgba(255,255,255,0.25)] dark:drop-shadow-[0_4px_2px_rgba(0,0,0,0.75)]">
         <img
-          v-if="(bannerImageUrl || bannerDarkImageUrl) && !bannerVideoUrl" :aria-expanded="!isHovered" :alt="`Banner for ${title}`" :class="{
+          v-if="(bannerImageUrl || bannerDarkImageUrl) && !bannerVideoUrl" :aria-expanded="!isHovered"
+          :alt="`Banner for ${title}`"
+          :class="{
           'card-image': true,
           'rounded-lg': true,
           'object-center': true,
@@ -14,8 +16,10 @@
           'transition-all': true,
         }" :src="prefersDark ? bannerDarkImageUrl : bannerImageUrl" />
         <video
-          tabindex="-1"
           v-if="bannerVideoUrl"
+          :alt="`Video Banner for ${title}`"
+          tabindex="-1"
+          :aria-label="`Banner for ${title}`"
           :aria-expanded="!isHovered"
           :class="{
             'card-video': true,
