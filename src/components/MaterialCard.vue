@@ -47,6 +47,7 @@
                 tabindex="-1"
                 @focus="isHovered = true"
                 @blur="isHovered = false"
+                :alt="`${title} is still under construction`"
                 :aria-label="`${title} is still under construction`"></ConstructionWorker>
             </span>
             <a class="inline-block dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"
@@ -54,6 +55,7 @@
               :href="launchUrl"
               target="_blank"
               rel="noopener noreferrer"
+              :alt="`Launch link to ${title} project`"
               :aria-label="`Launch link to ${title} project`"
               :title="`Launch (${title})`">
               <MaterialRocketLaunchOutline class="launch" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></MaterialRocketLaunchOutline>
@@ -63,6 +65,7 @@
               :href="githubUrl"
               target="_blank"
               rel="noopener noreferrer"
+              :alt="`GitHub link to ${title} project`"
               :aria-label="`GitHub link to ${title} project`"
               :title="`GitHub (${title})`">
               <BiGithub class="github" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></BiGithub>
@@ -72,6 +75,7 @@
               :href="notionUrl"
               target="_blank"
               rel="noopener noreferrer"
+              :alt="`Notion link to ${title} project`"
               :aria-label="`Notion link to ${title} project`"
               :title="`Notion (${title})`">
               <CibNotion class="notion" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></CibNotion>
