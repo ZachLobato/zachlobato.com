@@ -1,16 +1,4 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
-body {
-  display: flex;
-  place-items: center;
-}
+/* @import './base.css'; */
 
 .gradient-text {
   background: linear-gradient(to right, var(--tw-gradient-stops));
