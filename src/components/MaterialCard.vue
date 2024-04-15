@@ -1,6 +1,6 @@
 <template>
-  <article role="article" @mouseenter="isHovered = true" @mouseleave="isHovered = false" @touchend="isHovered = !isHovered" class="card rounded-lg bg-cadet-gray-100 dark:bg-cadet-gray-900 w-80 h-64">
-    <section class="w-80 h-64 overflow-hidden">
+  <article role="article" @mouseenter="isHovered = true" @mouseleave="isHovered = false" @touchend="isHovered = !isHovered" class="card rounded-lg bg-cadet-gray-100 dark:bg-cadet-gray-900 w-80 h-64 lg:w-72">
+    <section class="w-80 lg:w-72 h-64 overflow-hidden">
       <header class="drop-shadow-[0_4px_8px_rgba(255,255,255,0.25)] dark:drop-shadow-[0_4px_8px_rgba(0,0,0,0.75)]">
         <img
           v-if="(bannerImageUrl || bannerDarkImageUrl) && !bannerVideoUrl" :aria-expanded="!isHovered"
@@ -57,7 +57,7 @@
           <section class="icons flex gap-2 content-around">
             <span v-if="underConstruction" :title="`Under Construction (${title})`">
               <ConstructionWorker
-                class="construction"
+                class="construction dark:text-cadet-gray-200 text-cadet-gray-800 "
                 tabindex="-1"
                 @focus="isHovered = true"
                 @blur="isHovered = false"
@@ -95,7 +95,7 @@
               <CibNotion class="notion" tabindex="0" @focus="isHovered = true" @blur="isHovered = false"></CibNotion>
             </a>
           </section>
-          <div class="text-xs dark:text-prussian-blue-200 text-prussian-blue-800 place-self-end">{{updatedAt}}</div>
+          <div class="text-xs dark:text-cadet-gray-200 text-cadet-gray-800 place-self-end">{{updatedAt}}</div>
         </footer>
       </div>
     </section>
