@@ -1,15 +1,105 @@
 <template>
-  <div class="lg:grid lg:grid-cols-6">
-    <header class="lg:col-start-2 lg:col-span-2 h-screen flex flex-col justify-around lg:justify-between lg:mt-20 lg:fixed lg:right-1/2 lg:w-1/3">
+  <div class="lg:grid lg:grid-cols-12">
+    <header class="h-screen flex flex-col justify-around lg:justify-between lg:mt-20 lg:fixed lg:right-1/2 lg:w-1/3">
       <div v-if="!isLargeScreen"></div>
       <div class="flex flex-col justify-center">
         <h1 class="text-5xl text-center lg:text-left dark:text-pistachio-200 text-pistachio-800 mb-4 lg:mb-6">Zach Lobato</h1>
         <h2 class="text-xl text-center lg:text-left dark:text-pistachio-200 text-pistachio-800 mb-20 lg:mb-6">Husband, Father, Software Engineer</h2>
-        <p class="text-lg dark:text-cadet-gray-200 text-cadet-gray-800 text-base text-center lg:text-left lg:mb-32">I make products customers love.</p>
+        <p class="text-lg dark:text-cadet-gray-200 text-cadet-gray-800 text-base text-center lg:text-left">I make products customers love.</p>
       </div>
-      <ul v-if="isLargeScreen" class="dark:text-cadet-gray-200 text-cadet-gray-800 ">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#experience">Experience</a></li>
+      <ul v-if="isLargeScreen" class="dark:text-cadet-gray-200 text-cadet-gray-800 flex flex-col gap-5">
+        <li :class="{
+          'ml-2': mostVisible === 'products',
+          'transition-all': true,
+        }">
+          <a :class="{ 
+            'dark:text-prussian-blue-200': true,
+            'text-prussian-blue-800': true,
+            'dark:text-mint-green-200': mostVisible === 'products',
+            'dark:hover:text-mint-green-200': true,
+            'hover:text-mint-green-800': true,
+            'relative': true,
+            'flex items-center': true,
+          }" href="#products">        
+          <div :class="{
+            'absolute': true,
+            'left-0': true,
+            'top-0': true,
+            'bottom-0': true,
+            'p-0': true,
+            'm-0': true,
+            'hidden': mostVisible !== 'products',
+            'w-1': mostVisible === 'products',
+            'bg-cadet-gray-400': true,
+          }"></div>
+          <div :class="{
+            'ml-4': mostVisible === 'products',
+            'transition-all': true,
+          }">Products</div>
+          </a>
+        </li>
+
+        <li :class="{
+          'ml-2': mostVisible === 'philosophy',
+          'transition-all': true,
+        }">
+          <a :class="{ 
+            'dark:text-prussian-blue-200': true,
+            'text-prussian-blue-800': true,
+            'dark:text-mint-green-200': mostVisible === 'philosophy',
+            'dark:hover:text-mint-green-200': true,
+            'hover:text-mint-green-800': true,
+            'relative': true,
+            'flex items-center': true,
+          }" href="#philosophy">        
+          <div :class="{
+            'absolute': true,
+            'left-0': true,
+            'top-0': true,
+            'bottom-0': true,
+            'p-0': true,
+            'm-0': true,
+            'hidden': mostVisible !== 'philosophy',
+            'w-1': mostVisible === 'philosophy',
+            'bg-cadet-gray-400': true,
+          }"></div>
+          <div :class="{
+            'ml-4': mostVisible === 'philosophy',
+            'transition-all': true,
+          }">Philosophy</div>
+          </a>
+        </li>
+
+        <li :class="{
+          'ml-2': mostVisible === 'experience',
+          'transition-all': true,
+        }">
+          <a :class="{ 
+            'dark:text-prussian-blue-200': true,
+            'text-prussian-blue-800': true,
+            'dark:text-mint-green-200': mostVisible === 'experience',
+            'dark:hover:text-mint-green-200': true,
+            'hover:text-mint-green-800': true,
+            'relative': true,
+            'flex items-center': true,
+          }" href="#experience">        
+          <div :class="{
+            'absolute': true,
+            'left-0': true,
+            'top-0': true,
+            'bottom-0': true,
+            'p-0': true,
+            'm-0': true,
+            'hidden': mostVisible !== 'experience',
+            'w-1': mostVisible === 'experience',
+            'bg-cadet-gray-400': true,
+          }"></div>
+          <div :class="{
+            'ml-4': mostVisible === 'experience',
+            'transition-all': true,
+          }">Experience</div>
+          </a>
+        </li>
       </ul>
       <ul class="flex flex-row space-x-8 justify-center lg:justify-start lg:content-end lg:mb-40">
         <li><a target="_blank" href="https://bsky.app/profile/zachlobato.bsky.social" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"><IconBlueSky></IconBlueSky></a></li>
@@ -18,7 +108,7 @@
         <li><a target="_blank" href="https://www.linkedin.com/in/zachlobato" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"><IconLinkedIn></IconLinkedIn></a></li>
       </ul>
     </header>
-    <main class="lg:col-start-4 lg:col-span-2">
+    <main class="lg:col-start-7 lg:col-span-6 mr-6">
       <div class="flex" id="products">
         <div class="block m-auto min-h-screen w-full">
           <h2 v-show="!isLargeScreen"
@@ -42,8 +132,8 @@
           >
             Products
           </h2>
-          <h3 class="flex flex-col px-4 justify-center grid-row text-lg text-pistachio-800 dark:text-pistachio-200  mt-6 lg:mt-20 mb-8 mx-0">Latest Updated</h3>
-          <div class="flex justify-center gap-4 flex-wrap">
+          <h3 class="flex flex-col px-4 justify-center grid-row text-lg text-pistachio-800 dark:text-pistachio-200  mt-6 lg:mt-20 mb-8 mx-0 lg:px-0 lg:text-2xl">Latest Updated</h3>
+          <div class="flex justify-center lg:justify-normal gap-4 flex-wrap">
             <div v-if="data.isLoading">Loading...</div>
             <MaterialCard v-else v-for="(card, index) in data.info" :key="index"
               :banner-video-url="card.banner_video_url"
@@ -58,11 +148,24 @@
           </div>
         </div>
       </div>
+      <div class="flex w-full" id="philosophy">
+        <div class="block m-auto min-h-screen w-full bg-mint-green-200 text-center">
+          <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200 dark:bg-cadet-gray-800 mx-0">
+            Philosophy
+          </h2>
+          <div class="mt-4">
+            Coming Soon.
+          </div>
+        </div>
+      </div>
       <div class="flex w-full" id="experience">
-        <div class="block m-auto min-h-screen w-full">
-          <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 mb-6 h-16 w-full bg-cadet-gray-200 dark:bg-cadet-gray-800 mx-0">
+        <div class="block m-auto min-h-screen w-full bg-prussian-blue-200 text-center">
+          <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200 dark:bg-cadet-gray-800 mx-0">
             Experience
           </h2>
+          <div class="mt-4">
+            Coming Soon.
+          </div>
         </div>
       </div>
     </main>
@@ -80,8 +183,51 @@ import IconInstagram from '../components/icons/IconInstagram.vue'
 import IconLinkedIn from '../components/icons/IconLinkedIn.vue'
 
 const route = useRoute();
-const showProducts = ref(false);
-const showExperience = ref(false);
+const mostVisible = ref(''); // This ref will store the ID of the most visible element
+
+function handleIntersect(entries, observer) {
+  let maxVisibility = 0;
+  let mostVisibleId = '';
+
+  entries.forEach((entry) => {
+    const currentVisibility = entry.intersectionRatio; // How much of the element is visible
+    if (currentVisibility > maxVisibility) {
+      maxVisibility = currentVisibility;
+      mostVisibleId = entry.target.id; // Update the most visible element's ID
+    }
+  });
+
+  mostVisible.value = mostVisibleId; // Update the reactive reference
+}
+
+let observer;
+
+function detectMostVisible() {
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5 // Adjust as necessary to tweak when changes occur
+  };
+
+  observer = new IntersectionObserver(handleIntersect, options);
+
+  // Add all elements you to be observedß
+  ['products', 'philosophy', 'experience'].forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+      console.log(id);
+      observer.observe(element);
+    }
+  });
+}
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect();
+  }
+}); 
+
+
 
 function scrollToElementById(elementId) {
   const element = document.getElementById(elementId);
@@ -92,14 +238,14 @@ function scrollToElementById(elementId) {
 
 watchEffect(() => {
   const hash = route.hash;
-  showProducts.value = hash.includes('#products');
-  showExperience.value = hash.includes('#experience');
+  const showProducts = hash.includes('#products');
+  const showExperience = hash.includes('#experience');
 
-  if (showProducts.value) {
+  if (showProducts) {
     nextTick(() => {
       scrollToElementById('products');
     });
-  } else if (showExperience.value) {
+  } else if (showExperience) {
     nextTick(() => {
       scrollToElementById('experience');
     });
@@ -138,14 +284,14 @@ const fetchData = async () => {
     // const jsonData = await response.json();
     data.info = [
       {
-        banner_video_url: 'https://i.imgur.com/BB7MgdJ.mp4',
-        banner_dark_video_url: "https://i.imgur.com/rlIj59R.mp4",
+        banner_video_url: 'https://i.imgur.com/JeFU9hf.mp4',
+        banner_dark_video_url: "https://i.imgur.com/NJ5fStd.mp4",
         launch_url: "https://zachlobato.com",
         github_url: "https://github.com/ZachLobato/zachlobato.com-website",
         notion_url: "https://riticulous.notion.site/Zach_Lobato_Website_a1e47722d50a44688f6ff9211d7d25cb",
         title: "Personal Website",
         sub_title: "For the latest on me",
-        updated_at: "2024-04-05",
+        updated_at: "2024-04-15",
       },
       {
         banner_video_url: 'https://i.imgur.com/N1tahcD.mp4',
@@ -166,13 +312,14 @@ const fetchData = async () => {
 onMounted(() => {
   fetchData();
   checkScreenSize();
+  detectMostVisible();
   nextTick(() => {
     const hash = window.location.hash;
-    showProducts.value = hash.includes('#products');
-    showExperience.value = hash.includes('#experience');
-    if (showProducts.value) {
+    const showProducts = hash.includes('#products');
+    const showExperience = hash.includes('#experience');
+    if (showProducts) {
       scrollToElementById('products');
-    } else if (showExperience.value) {
+    } else if (showExperience) {
       scrollToElementById('experience');
     }
   });
