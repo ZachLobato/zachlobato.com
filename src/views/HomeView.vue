@@ -2,9 +2,9 @@
   <header class="h-screen flex flex-col justify-around">
     <div></div>
     <div class="flex flex-col justify-center">
-      <h1 class="text-5xl text-center text-pistachio-200 mb-4">Zach Lobato</h1>
-      <h2 class="text-xl text-center text-pistachio-200 mb-20">Husband, Father, Software Engineer</h2>
-      <p class="text-lg text-cadet-gray-200 text-base text-center">I make products customers love.</p>
+      <h1 class="text-5xl text-center dark:text-pistachio-200 text-pistachio-800 mb-4">Zach Lobato</h1>
+      <h2 class="text-xl text-center dark:text-pistachio-200 text-pistachio-800 mb-20">Husband, Father, Software Engineer</h2>
+      <p class="text-lg dark:text-cadet-gray-200 text-cadet-gray-800 text-base text-center">I make products customers love.</p>
     </div>
     <ul v-if="false">
       <li><a href="#Products">Products</a></li>
@@ -18,11 +18,11 @@
   </header>
   <main>
     <div class="flex">
-      <div class="m-auto min-h-screen">
-        <h2 id="Products" class="flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 mb-6 h-16 bg-cadet-gray-200 dark:bg-cadet-gray-800 mx-0">
+      <div class="block m-auto min-h-screen w-full">
+        <h2 id="Products" class="sticky top-0 z-10 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 bg-cadet-gray-200 dark:bg-cadet-gray-800 mx-0">
           Products
         </h2>
-        <h3 class="flex flex-col px-4 justify-center grid-row text-lg text-pistachio-800 dark:text-pistachio-200 mb-8 mx-0">Latest Updated</h3>
+        <h3 class="flex flex-col px-4 justify-center grid-row text-lg text-pistachio-800 dark:text-pistachio-200  mt-6 mb-8 mx-0">Latest Updated</h3>
         <div class="flex justify-center gap-4 flex-wrap">
           <div v-if="data.isLoading">Loading...</div>
           <MaterialCard v-else v-for="(card, index) in data.info" :key="index"
@@ -36,6 +36,13 @@
             :updated-at="card.updated_at"
             :sub-title="card.sub_title"></MaterialCard>
         </div>
+      </div>
+    </div>
+    <div class="flex w-full">
+      <div class="block m-auto min-h-screen w-full">
+        <h2 id="Products" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 mb-6 h-16 w-full bg-cadet-gray-200 dark:bg-cadet-gray-800 mx-0">
+          Next
+        </h2>
       </div>
     </div>
   </main>

@@ -1,7 +1,7 @@
 <template>
-  <article role="article" @mouseenter="isHovered = true" @mouseleave="isHovered = false" @touchend="isHovered = !isHovered" class="card rounded-lg bg-cadet-gray-100 dark:bg-cadet-gray-900 w-80 h-64 drop-shadow-[0_0_4px_rgba(0,0,0,0.75)] dark:drop-shadow-[0_0_4px_rgba(255,255,255,0.25)]">
+  <article role="article" @mouseenter="isHovered = true" @mouseleave="isHovered = false" @touchend="isHovered = !isHovered" class="card rounded-lg bg-cadet-gray-100 dark:bg-cadet-gray-900 w-80 h-64">
     <section class="w-80 h-64 overflow-hidden">
-      <header class="drop-shadow-[0_4px_2px_rgba(255,255,255,0.25)] dark:drop-shadow-[0_4px_2px_rgba(0,0,0,0.75)]">
+      <header class="drop-shadow-[0_4px_8px_rgba(255,255,255,0.25)] dark:drop-shadow-[0_4px_8px_rgba(0,0,0,0.75)]">
         <img
           v-if="(bannerImageUrl || bannerDarkImageUrl) && !bannerVideoUrl" :aria-expanded="!isHovered"
           :alt="`Banner for ${title}`"
@@ -38,13 +38,23 @@
           playsinline>
         </video>
       </header>
-      <div class="card-content px-4 py-2 flex flex-col justify-between h-32">
+      <div :class="{
+        'card-content': true,
+        'px-4': true,
+        'py-2': true,
+        'flex': true,
+        'flex-col': true,
+        'transition-all': true,
+        // 'justify-around': isHovered,
+        'justify-between': true,
+        'h-32': true
+        }">
         <div>
-          <h3 class="card-title text-2xl font-semibold dark:text-prussian-blue-200 text-prussian-blue-800">{{ title }}</h3>
-          <p class="card-subtitle text-xs text-cadet-gray-500"> {{ subTitle }}</p>
+          <h3 class="card-title text-2xl font-semibold dark:text-pistachio-400 text-pistachio-600">{{ title }}</h3>
+          <p class="card-subtitle text-xs text-cadet-gray-600 dark:text-cadet-gray-400"> {{ subTitle }}</p>
         </div>
-        <footer class="grid grid-cols-2 content-around">
-          <section class="icons grid grid-cols-3 gap-2 content-around">
+        <footer class="grid grid-cols-2 content-around content-end">
+          <section class="icons flex gap-2 content-around">
             <span v-if="underConstruction" :title="`Under Construction (${title})`">
               <ConstructionWorker
                 class="construction"
@@ -94,8 +104,9 @@
 
 <script setup>
 import CibNotion from './icons/IconCibNotion.vue'
-import BiGithub from './icons/IconBiGithub.vue'
+import BiGithub from './icons/IconGithub.vue'
 import MaterialRocketLaunchOutline from './icons/IconMaterialRocketLaunchOutline.vue'
+import VueJS from './icons/IconSIVue.vue'
 import ConstructionWorker from './icons/IconEmConstructionWorker.vue'
 import { watchEffect, onUnmounted } from 'vue';
 
