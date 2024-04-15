@@ -108,7 +108,7 @@
         <li><a target="_blank" href="https://www.linkedin.com/in/zachlobato" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200"><IconLinkedIn></IconLinkedIn></a></li>
       </ul>
     </header>
-    <main class="lg:col-start-7 lg:col-span-6 mr-6">
+    <main class="lg:col-start-7 lg:col-span-6 lg:mr-6">
       <div class="flex" id="products">
         <div class="block m-auto min-h-screen w-full">
           <h2 v-show="!isLargeScreen"
