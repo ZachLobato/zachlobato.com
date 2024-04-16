@@ -164,7 +164,7 @@
               <li>“I’ve never been able to luck my way to the correct solution, faster than I can understand a customer’s true problem.”</li>
             </ul>
             <br />
-            <p>This is what we do in the school of product I subscribe to (inspired by the <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://jpattonassociates.com/">Jeff Patton</a>).</p>
+            <p>This is what we do in the school of product I subscribe to (inspired by <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://jpattonassociates.com/">Jeff Patton</a>).</p>
             <br />
             <p>Product Managers start by identifying the most critical problems to solve by assessing the reach and impact of these issues on customers. Product Designers then create targeted solutions for these problems, each with a unique approach, and evaluate their confidence in the effectiveness of each. Software Engineers assess the feasibility of implementing these solutions.</p>
             <br />
