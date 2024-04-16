@@ -1,6 +1,6 @@
 <template>
-  <article role="article" @mouseenter="isHovered = true" @mouseleave="isHovered = false" @touchend="isHovered = !isHovered" class="card rounded-lg bg-cadet-gray-100 dark:bg-cadet-gray-900 w-80 h-64 lg:w-72">
-    <section class="w-80 lg:w-72 h-64 overflow-hidden">
+  <article role="article" @mouseenter="isHovered = true" @mouseleave="isHovered = false" @touchend="isHovered = !isHovered" class="card rounded-lg bg-cadet-gray-100 dark:bg-cadet-gray-900 w-80 h-64 lg:w-80">
+    <section class="w-full lg:w-full h-64 overflow-hidden">
       <header class="drop-shadow-[0_4px_8px_rgba(255,255,255,0.25)] dark:drop-shadow-[0_4px_8px_rgba(0,0,0,0.75)]">
         <img
           v-if="(bannerImageUrl || bannerDarkImageUrl) && !bannerVideoUrl" :aria-expanded="!isHovered"
@@ -19,8 +19,6 @@
           v-if="bannerVideoUrl"
           :alt="`Video Banner for ${title}`"
           tabindex="-1"
-          :aria-label="`Banner for ${title}`"
-          :aria-expanded="!isHovered"
           :class="{
             'card-video': true,
             'rounded-lg': true,
