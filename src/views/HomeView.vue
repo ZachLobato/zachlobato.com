@@ -166,7 +166,9 @@
             <br />
             <p>This is what we do in the school of product I subscribe to (inspired by the <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://jpattonassociates.com/">Jeff Patton</a>).</p>
             <br />
-            <p>Product Managers prioritize problems to be solved by understanding which customers they reach and, for that customer, how much that problem impacts them. Product Designers then come up with solutions for the most important problems. Each solution addresses the problem differently. As such, the product designer will decide how confident they are in that solution. Software Engineers will then decide how easy it is to implement the proposed solution. We can give a simple 0-10 rating for this reach, impact, confidence and ease. The product of which represents a RICE score, which can be used for prioritization of the solutions implemented.  I’ll note our team switched Effort to Ease so that we could always be thinking, “low is bad, high is good”—makes the math easier as well.</p>
+            <p>Product Managers start by identifying the most critical problems to solve by assessing the reach and impact of these issues on customers. Product Designers then create targeted solutions for these problems, each with a unique approach, and evaluate their confidence in the effectiveness of each. Software Engineers assess the feasibility of implementing these solutions.</p>
+            <br />
+            <p>To streamline this process, we use a 0-10 rating for reach, impact, confidence, and ease of implementation. Multiplying these ratings results in a RICE score, which helps prioritize the solutions. Our team has replaced 'Effort' with 'Ease' in our scoring to keep the logic simple: lower scores are less desirable, and higher scores are more feasible.</p>
 
             <p>For examples of how this could translate to a real-world implementation, you can look to any of my project’s Notion pages.</p>
           </article>
