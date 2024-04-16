@@ -154,7 +154,7 @@
           <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200/20 dark:bg-cadet-gray-800/20 backdrop-blur-sm mx-0">
             Philosophy
           </h2>
-          <article class="mt-4 mx-4 dark:text-cadet-gray-200 text-cadet-gray-800 text-base text-left">
+          <article class="mt-4 mx-4 dark:text-cadet-gray-200 text-cadet-gray-800 text-base text-left mb-4">
             <p>In college, I went on a stint learning <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://www.vim.org/">VIM</a> because I felt it’d make me faster and more efficient as a software engineer. My close friend Taylor made the comment, “I’ve never had the problem of being able to type slower than I can think.” My Vim abilities are still useful for shelling into servers, but not for my original intent for which today I’ll recommend <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://code.visualstudio.com/">VSCode</a>.</p>
             <br />
             <p>Along that same train of thought, I’ll add the following sentiments:</p>
@@ -173,7 +173,7 @@
         </div>
       </div>
       <div class="flex w-full" id="experience">
-        <div class="block m-auto min-h-screen w-full bg-prussian-blue-200">
+        <div class="block m-auto min-h-screen w-full">
           <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200/20 dark:bg-cadet-gray-800/20 backdrop-blur-sm mx-0">
             Experience
           </h2>
