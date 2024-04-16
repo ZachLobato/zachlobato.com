@@ -215,7 +215,6 @@ function detectMostVisible() {
   ['products', 'philosophy', 'experience'].forEach(id => {
     const element = document.getElementById(id);
     if (element) {
-      console.log(id);
       observer.observe(element);
     }
   });
