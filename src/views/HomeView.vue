@@ -304,7 +304,7 @@ const fetchData = async () => {
         notion_url: "https://riticulous.notion.site/Zach_Lobato_Website_a1e47722d50a44688f6ff9211d7d25cb",
         title: "Personal Website",
         sub_title: "For the latest on me",
-        updated_at: "2024-04-15",
+        updated_at: "2024-04-16",
       },
       {
         banner_video_url: 'https://i.imgur.com/N1tahcD.mp4',
