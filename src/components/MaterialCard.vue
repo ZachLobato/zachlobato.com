@@ -52,7 +52,7 @@
           <p class="card-subtitle text-xs text-cadet-gray-600 dark:text-cadet-gray-400"> {{ subTitle }}</p>
         </div>
         <footer class="grid grid-cols-2 content-around content-end">
-          <section class="icons flex gap-2 content-around">
+          <section class="icons flex gap-3 content-around">
             <span v-if="underConstruction" :title="`Under Construction (${title})`">
               <ConstructionWorker
                 class="construction dark:text-cadet-gray-200 text-cadet-gray-800 "

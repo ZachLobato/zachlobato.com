@@ -133,8 +133,8 @@
           >
             Products
           </h2>
-          <h3 class="flex flex-col px-4 justify-center grid-row text-lg text-pistachio-800 dark:text-pistachio-200  mt-6 lg:mt-20 mb-8 mx-0 lg:px-0 lg:text-2xl">Latest Updated</h3>
-          <div class="flex justify-center lg:justify-normal gap-4 flex-wrap">
+          <h3 class="flex flex-col justify-center grid-row text-lg text-pistachio-800 dark:text-pistachio-200  mt-6 lg:mt-20 mb-6 mx-4 lg:mx-0 lg:px-0 lg:text-2xl">Latest Updated</h3>
+          <div class="flex justify-center lg:justify-normal gap-4 flex-wrap mx-4">
             <div v-if="data.isLoading">Loading...</div>
             <MaterialCard v-else v-for="(card, index) in data.info" :key="index"
               :banner-video-url="card.banner_video_url"
@@ -154,6 +154,7 @@
           <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200/20 dark:bg-cadet-gray-800/20 backdrop-blur-sm mx-0">
             Philosophy
           </h2>
+          <h3 class="flex flex-col px-4 justify-center grid-row text-lg text-pistachio-800 dark:text-pistachio-200  mt-6 lg:mt-20 mb-6 mx-0 lg:px-0 lg:text-2xl">A Product Approach</h3>
           <article class="mt-4 mx-4 dark:text-cadet-gray-200 text-cadet-gray-800 text-base text-left mb-4">
             <p>In college, I went on a stint learning <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://www.vim.org/">VIM</a> because I felt it’d make me faster and more efficient as a software engineer. My close friend Taylor made the comment, “I’ve never had the problem of being able to type slower than I can think.” My Vim abilities are still useful for shelling into servers, but not for my original intent for which today I’ll recommend <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://code.visualstudio.com/">VSCode</a>.</p>
             <br />
@@ -169,7 +170,7 @@
             <p>Product Managers start by identifying the most critical problems to solve by assessing the reach and impact of these issues on customers. Product Designers then create targeted solutions for these problems, each with a unique approach, and evaluate their confidence in the effectiveness of each. Software Engineers assess the feasibility of implementing these solutions.</p>
             <br />
             <p>To streamline this process, we use a 0-10 rating for reach, impact, confidence, and ease of implementation. Multiplying these ratings results in a RICE score, which helps prioritize the solutions. Our team has replaced 'Effort' with 'Ease' in our scoring to keep the logic simple: lower scores are less desirable, and higher scores are more feasible.</p>
-
+            <br />
             <p>For examples of how this could translate to a real-world implementation, you can look to any of my project’s Notion pages.</p>
           </article>
         </div>
@@ -179,9 +180,46 @@
           <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200/20 dark:bg-cadet-gray-800/20 backdrop-blur-sm mx-0">
             Experience
           </h2>
-          <div class="mt-4 text-center">
-            Coming Soon.
+          <div class="flex flex-row mx-4 lg:mx-0 mt-6 mb-6 lg:mt-20 lg:px-0 text-pistachio-800 dark:text-pistachio-200 justify-between">
+            <h3 class="flex flex-col justify-center grid-row text-lg mx-0 lg:text-2xl">UHIN</h3>
+            <div>03/2017 to Present</div>
           </div>
+          <div class="mx-4 mb-2">
+            <h4 class="text-pistachio-600 dark:text-pistachio-400 uppercase font-bold text-base">Principal Software Engineer</h4>
+            <h5 class="text-cadet-gray-800 dark:text-cadet-gray-200 font-bold text-xs">2 Years 9 Months</h5>
+          </div>
+          <p class="mx-4 mb-4 text-cadet-gray-800 dark:text-cadet-gray-200">Manage and train four software engineers while working very closely with a Product Manager and Product Designer on a core product team. Coordinate team’s efforts with company’s larger security and compliance goals.</p>
+          <div class="mx-4 mb-2">
+            <h4 class="text-pistachio-600 dark:text-pistachio-400 uppercase font-bold text-base">Senior Software Engineer</h4>
+            <h5 class="text-cadet-gray-800 dark:text-cadet-gray-200 font-bold text-xs">1 Year 11 Months</h5>
+          </div>
+          <p class="mx-4 mb-4 text-cadet-gray-800 dark:text-cadet-gray-200">Replaced legacy claim submission software with a more intuitive and collaborative web application. Lowered claim submission times from tens of minutes to seconds with “templates” implementation.</p>
+          <div class="mx-4 mb-2">
+            <h4 class="text-pistachio-600 dark:text-pistachio-400 uppercase font-bold text-base">Software Engineer</h4>
+            <h5 class="text-cadet-gray-800 dark:text-cadet-gray-200 font-bold text-xs">2 Years 8 Months</h5>
+          </div>
+          <p class="mx-4 mb-4 text-cadet-gray-800 dark:text-cadet-gray-200">Understood and maintained legacy Healthcare EDI protocols. Started a chain of events that eventually has led to the future replacement of the entire Clearinghouse.</p>
+          <div class="flex flex-row mx-4 lg:mx-0 mt-6 mb-6 lg:px-0 text-pistachio-800 dark:text-pistachio-200 justify-between">
+            <h3 class="flex flex-col justify-center grid-row text-lg mx-0 lg:text-2xl">Navitaire</h3>
+            <div>07/2016 to 03/2017</div>
+          </div>
+          <div class="mx-4 mb-2">
+            <h4 class="text-pistachio-600 dark:text-pistachio-400 uppercase font-bold text-base">Software Developer</h4>
+            <h5 class="text-cadet-gray-800 dark:text-cadet-gray-200 font-bold text-xs">9 Months</h5>
+          </div>
+          <p class="mx-4 mb-4 text-cadet-gray-800 dark:text-cadet-gray-200">Maintained and updated .NET code (C#, MSMQ, and SQL) while collaborating with an international team on large scale code changes. Created documentation and trainings for tools and software that previously did not exist, to hopefully decrease training time for new employees.</p>
+          <div class="flex flex-row mx-4 lg:mx-0 mt-6 mb-6 lg:px-0 text-pistachio-800 dark:text-pistachio-200 justify-between">
+            <h3 class="flex flex-col justify-center grid-row text-lg mx-0 lg:text-2xl">University of Utah</h3>
+            <div>05/2015 to 08/2015</div>
+          </div>
+          <div class="mx-4 mb-2">
+            <h4 class="text-pistachio-600 dark:text-pistachio-400 uppercase font-bold text-base">Teaching Assistant</h4>
+            <h5 class="text-cadet-gray-800 dark:text-cadet-gray-200 font-bold text-xs">4 Months</h5>
+          </div>
+          <p class="mx-4 mb-4 text-cadet-gray-800 dark:text-cadet-gray-200">Maintained the responsibilities of teaching labs, holding office hours, creating assignments grading rubrics, and grading weekly assignments. Created additional course materials and held extended hours for the students’ benefit.</p>
+          <!-- <div class="mt-4 text-center dark:text-cadet-gray-200 text-cadet-gray-800">
+            Coming Soon.
+          </div> -->
         </div>
       </div>
     </main>
