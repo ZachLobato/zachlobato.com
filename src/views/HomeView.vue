@@ -108,13 +108,13 @@
         <li><a target="_blank" href="https://www.linkedin.com/in/zachlobato" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" aria-label="Personal LinkedIn Link" alt="Personal LinkedIn Link" title="Personal LinkedIn Link" rel="noopener noreferrer"><IconLinkedIn></IconLinkedIn></a></li>
       </ul>
     </header>
-    <main class="lg:col-start-7 lg:col-span-6 lg:mr-6" id="main">
+    <main class="lg:col-start-7 lg:col-span-5 lg:mr-6" id="main">
       <div class="flex" id="products">
         <div class="block m-auto min-h-screen w-full">
           <h2 v-show="!isLargeScreen"
             :class="{
-              'bg-cadet-gray-200': true,
-              'dark:bg-cadet-gray-800': true,
+              'bg-cadet-gray-200/20': true,
+              'dark:bg-cadet-gray-800/20': true,
               'dark:text-pistachio-200': true,
               'flex-col': true,
               'flex': true,
@@ -128,6 +128,7 @@
               'text-pistachio-800': true,
               'top-0': true,
               'z-10': true,
+              'backdrop-blur-sm': true,
             }"
           >
             Products
@@ -149,21 +150,34 @@
         </div>
       </div>
       <div class="flex w-full" id="philosophy">
-        <div class="block m-auto min-h-screen w-full bg-mint-green-200 text-center">
-          <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200 dark:bg-cadet-gray-800 mx-0">
+        <div class="block m-auto min-h-screen w-full">
+          <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200/20 dark:bg-cadet-gray-800/20 backdrop-blur-sm mx-0">
             Philosophy
           </h2>
-          <div class="mt-4">
-            Coming Soon.
-          </div>
+          <article class="mt-4 mx-4 dark:text-cadet-gray-200 text-cadet-gray-800 text-base text-left">
+            <p>In college, I went on a stint learning <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://www.vim.org/">VIM</a> because I felt it’d make me faster and more efficient as a software engineer. My close friend Taylor made the comment, “I’ve never had the problem of being able to type slower than I can think.” My Vim abilities are still useful for shelling into servers, but not for my original intent for which today I’ll recommend <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://code.visualstudio.com/">VSCode</a>.</p>
+            <br />
+            <p>Along that same train of thought, I’ll add the following sentiments:</p>
+            <br />
+            <ul class="list-disc list-inside mx-4">
+              <li>“I’ve never been able to build a software solution faster than I can mock it up.”</li>
+              <li>“I’ve never been able to luck my way to the correct solution, faster than I can understand a customer’s true problem.”</li>
+            </ul>
+            <br />
+            <p>This is what we do in the school of product I subscribe to (inspired by the <a target="_blank" class="dark:text-prussian-blue-200 text-prussian-blue-800 hover:text-mint-green-800 dark:hover:text-mint-green-200" href="https://jpattonassociates.com/">Jeff Patton</a>).</p>
+            <br />
+            <p>Product Managers prioritize problems to be solved by understanding which customers they reach and, for that customer, how much that problem impacts them. Product Designers then come up with solutions for the most important problems. Each solution addresses the problem differently. As such, the product designer will decide how confident they are in that solution. Software Engineers will then decide how easy it is to implement the proposed solution. We can give a simple 0-10 rating for this reach, impact, confidence and ease. The product of which represents a RICE score, which can be used for prioritization of the solutions implemented.  I’ll note our team switched Effort to Ease so that we could always be thinking, “low is bad, high is good”—makes the math easier as well.</p>
+
+            <p>For examples of how this could translate to a real-world implementation, you can look to any of my project’s Notion pages.</p>
+          </article>
         </div>
       </div>
       <div class="flex w-full" id="experience">
-        <div class="block m-auto min-h-screen w-full bg-prussian-blue-200 text-center">
-          <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200 dark:bg-cadet-gray-800 mx-0">
+        <div class="block m-auto min-h-screen w-full bg-prussian-blue-200">
+          <h2 v-show="!isLargeScreen" class="sticky top-0 flex flex-col px-4 justify-center grid-row text-3xl text-pistachio-800 dark:text-pistachio-200 h-16 w-full bg-cadet-gray-200/20 dark:bg-cadet-gray-800/20 backdrop-blur-sm mx-0">
             Experience
           </h2>
-          <div class="mt-4">
+          <div class="mt-4 text-center">
             Coming Soon.
           </div>
         </div>
