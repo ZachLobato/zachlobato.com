@@ -186,7 +186,7 @@
           </div>
           <div class="mx-4 mb-2">
             <h4 class="text-pistachio-600 dark:text-pistachio-400 uppercase font-bold text-base">Principal Software Engineer</h4>
-            <h5 class="text-cadet-gray-800 dark:text-cadet-gray-200 font-bold text-xs">2 Years 9 Months</h5>
+            <h5 class="text-cadet-gray-800 dark:text-cadet-gray-200 font-bold text-xs">{{ latestPositionDuration }}</h5>
           </div>
           <p class="mx-4 mb-4 text-cadet-gray-800 dark:text-cadet-gray-200">Manage and train four software engineers while working very closely with a Product Manager and Product Designer on a core product team. Coordinate team’s efforts with company’s larger security and compliance goals.</p>
           <div class="mx-4 mb-2">
@@ -238,6 +238,35 @@ import IconLinkedIn from '../components/icons/IconLinkedIn.vue'
 
 const route = useRoute();
 const mostVisible = ref(''); // This ref will store the ID of the most visible element
+const latestPositionDuration = ref('');
+
+function calculateDifference() {
+  const date = new Date('2021-07-01');
+  const now = new Date();
+
+  let years = now.getFullYear() - date.getFullYear();
+  let months = now.getMonth() - date.getMonth();
+
+  if (month < 0) {
+    years -= 1;
+    months += 12;
+  }
+
+  return formatDifference(years, months);
+}
+
+function formatDifference() {
+  const yearStr = years === 1 ? '1 Year' : `${years} Years`;
+  const monthStr = months === 1 ? '1 Month' : `${months} Months`;
+  
+  if (years === 0) {
+    return monthStr;
+  } else if (months === 0) {
+    return yearStr;
+  } else {
+    return `${yearStr} ${monthStr}`;
+  }
+}
 
 function handleIntersect(entries, observer) {
   let maxVisibility = 0;
@@ -344,7 +373,7 @@ const fetchData = async () => {
         notion_url: "https://riticulous.notion.site/Zach_Lobato_Website_a1e47722d50a44688f6ff9211d7d25cb",
         title: "Personal Website",
         sub_title: "For the latest on me",
-        updated_at: "2024-04-17",
+        updated_at: "2024-07-15",
       },
       {
         banner_video_url: 'https://i.imgur.com/N1tahcD.mp4',
@@ -366,6 +395,8 @@ onMounted(() => {
   fetchData();
   checkScreenSize();
   detectMostVisible();
+  latestPositionDuration.value = calculateDifference();
+
   nextTick(() => {
     const hash = window.location.hash;
     const showProducts = hash.includes('#products');
