@@ -241,13 +241,13 @@ const mostVisible = ref(''); // This ref will store the ID of the most visible e
 const latestPositionDuration = ref('');
 
 function calculateDifference() {
-  const date = new Date('2021-07-01');
+  const date = new Date('2021-08-01');
   const now = new Date();
 
   let years = now.getFullYear() - date.getFullYear();
   let months = now.getMonth() - date.getMonth();
 
-  if (month < 0) {
+  if (months < 0) {
     years -= 1;
     months += 12;
   }
@@ -255,7 +255,7 @@ function calculateDifference() {
   return formatDifference(years, months);
 }
 
-function formatDifference() {
+function formatDifference(years, months) {
   const yearStr = years === 1 ? '1 Year' : `${years} Years`;
   const monthStr = months === 1 ? '1 Month' : `${months} Months`;
   
